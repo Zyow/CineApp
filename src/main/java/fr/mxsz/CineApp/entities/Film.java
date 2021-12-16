@@ -18,6 +18,5 @@ public class Film {
 	@Id
 	private String id;
 	private String nom;
-	private Date dateDebut;
-	private Date dateFin;
+	private String duree;
 }
