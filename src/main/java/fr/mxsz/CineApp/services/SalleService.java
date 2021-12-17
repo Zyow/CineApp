@@ -1,9 +1,11 @@
 package fr.mxsz.CineApp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 
+import fr.mxsz.CineApp.dtos.GetSalleDTO;
 import fr.mxsz.CineApp.entities.Salle;
 import fr.mxsz.CineApp.repositories.SalleRepository;
 
@@ -41,5 +43,15 @@ public class SalleService {
 	 */
 	public void delete(Salle salle) {
 		this.repository.delete(salle);
+	}
+	
+	public GetSalleDTO getSalle(String id) {
+		
+		Optional<Salle> salle = this.repository.findById(id);
+		
+		ModelMapper mapper = new ModelMapper();
+		GetSalleDTO getSalleDTO = mapper.map(salle.get(), GetSalleDTO.class);
+		
+		return getSalleDTO;
 	}
 }

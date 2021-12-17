@@ -1,9 +1,11 @@
 package fr.mxsz.CineApp.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 
+import fr.mxsz.CineApp.dtos.GetFilmDTO;
 import fr.mxsz.CineApp.entities.Film;
 import fr.mxsz.CineApp.repositories.FilmRepository;
 
@@ -41,5 +43,15 @@ public class FilmService {
 	 */
 	public void delete(Film film) {
 		this.repository.delete(film);
+	}
+	
+	public GetFilmDTO getFilm(String id) {
+		
+		Optional<Film> film = this.repository.findById(id);
+		
+		ModelMapper mapper = new ModelMapper();
+		GetFilmDTO getFilmDTO = mapper.map(film.get(), GetFilmDTO.class);
+		
+		return getFilmDTO;
 	}
 }
