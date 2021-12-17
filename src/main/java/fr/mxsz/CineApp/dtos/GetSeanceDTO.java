@@ -1,9 +1,12 @@
-package fr.mxsz.CineApp.entities;
+package fr.mxsz.CineApp.dtos;
 
-import org.springframework.data.annotation.Id;
+import java.util.Date;
+
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import fr.mxsz.CineApp.entities.Film;
+import fr.mxsz.CineApp.entities.Salle;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,12 +15,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Document
-public class Cinema {
+public class GetSeanceDTO {
 
-	@Id
 	private String id;
-	private String nom;
+	private Date date;
 	
 	@DBRef
-	private Seance seance;
+	private Film film;
+	@DBRef
+	private Salle salle;
 }
