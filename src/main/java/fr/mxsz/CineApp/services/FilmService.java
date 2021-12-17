@@ -2,15 +2,20 @@ package fr.mxsz.CineApp.services;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
+
 import fr.mxsz.CineApp.entities.Film;
 import fr.mxsz.CineApp.repositories.FilmRepository;
 
 public class FilmService {
 
-	FilmRepository repository;
+	private FilmRepository repository;
+	private ModelMapper mapper;
 	
-	public FilmService(FilmRepository repository) {
+	public FilmService(FilmRepository repository,
+			ModelMapper mapper) {
 		this.repository = repository;
+		this.mapper = mapper;
 	}
 	
 	/**

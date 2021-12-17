@@ -4,17 +4,17 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import fr.mxsz.CineApp.repositories.FilmRepository;
-import fr.mxsz.CineApp.services.FilmService;
+import fr.mxsz.CineApp.repositories.SalleRepository;
+import fr.mxsz.CineApp.services.SalleService;
 
 @Configuration
-public class FilmConfiguration {
+public class SalleConfiguration {
 
 	@Bean
-	public FilmService filmService(
-			FilmRepository repository,
+	public SalleService salleService(
+			SalleRepository repository,
 			ModelMapper mapper
 			) {
-		return new FilmService(repository, mapper);
+		return new SalleService(repository, mapper);
 	}
 }
