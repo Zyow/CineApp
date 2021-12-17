@@ -11,10 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Document
-public class Salle {
+public class Cinema {
 
 	@Id
 	private String id;
-	private Integer numero;
-	private Integer nbrPlaces;
+	private String nom;
 }

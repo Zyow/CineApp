@@ -1,7 +1,4 @@
-package fr.mxsz.CineApp.entities;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+package fr.mxsz.CineApp.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,10 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Document
-public class Salle {
+public class GetSalleDTO {
 
-	@Id
 	private String id;
 	private Integer numero;
 	private Integer nbrPlaces;
